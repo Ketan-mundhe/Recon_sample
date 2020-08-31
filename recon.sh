@@ -13,14 +13,14 @@ mkdir -p $domain/subdomain
 sublist3r -d $domain -o $domain/subdomain/sublist3r.txt
 subfinder -d $domain -o $domain/subdomain/subfinder.txt
 assetfinder -subs-only $domain | tee $domain/subdomain/assetfinder.txt
-#shuffledns -d $domain -w $wordlist -r $resolvers -o $domain/subdomain/shuffledns.txt
+shuffledns -d $domain -w $wordlist -r $resolvers -o $domain/subdomain/shuffledns.txt
 
 cat $domain/subdomain/*txt > $domain/subdomain/all.txt
 
 }
 sub_enum
 resolving_domains(){
-#shuffledns -d $domain -list $domain/subdomain/all.txt -o $domain/subdomain/domain.txt
+shuffledns -d $domain -list $domain/subdomain/all.txt -o $domain/subdomain/domain.txt
 }
 resolving_domains
 
